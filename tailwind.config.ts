@@ -12,6 +12,11 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        solanelRegular: ["solanel-regular"],
+        solanelBold: ["solanel-bold"],
+        solanelLight: ["solanel-light"],
+      },
     },
   },
   plugins: [],
