@@ -38,7 +38,7 @@ export const getAuthToken = async () => {
   return response.json();
 };
 
-const API_ENDPOINT = "/api/contact";
+const API_ENDPOINT = process.env.API_URL + "/api/contact";
 
 export default async function handleSendEmail(data: {
   username: string;
