@@ -1,3 +1,7 @@
+"use client";
+import { useIsVisible } from "@/hooks/element-boundary";
+import React from "react";
+
 export interface PricePlanItemProps {
   name: string;
   description: string;
@@ -13,8 +17,21 @@ export default function PricePlanItem({
   features,
   hourly,
 }: PricePlanItemProps) {
+  const durations = [
+    "duration-300",
+    "duration-500",
+    "duration-700",
+    "duration-1000",
+  ];
+  const selectDuration =
+    durations[Math.floor(Math.random() * durations.length)];
+  const priceItemRef = React.useRef<HTMLDivElement>(null);
+  const priceItemIsVisible = useIsVisible(priceItemRef);
   return (
-    <div className="ring-2 ring-black/10 rounded-3xl p-8 xl:p-10 dark:ring-white/10">
+    <div
+      ref={priceItemRef}
+      className={`ring-2 ring-black/10 rounded-3xl p-8 xl:p-10 dark:ring-white/10 ${priceItemIsVisible ? "opacity-100" : "opacity-0"} ease-in ${selectDuration}`}
+    >
       <div className="flex items-center justify-between gap-x-4">
         <h2 id="product1" className="text-lg font-solanelBold leading-8 ">
           {name}
