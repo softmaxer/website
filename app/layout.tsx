@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "RAM",
-  description: "A portfolio",
+  description: "Musician / Producer",
 };
 
 export default function RootLayout({
