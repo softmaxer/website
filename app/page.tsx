@@ -26,6 +26,7 @@ export default function Home() {
         <Socials />
         <div className="flex flex-col justify-start rounded-md p-2 gap-5 font-solanelRegular">
           <ProfileButton action="My work" path="/music" />
+          <ProfileButton action="More about me" path="/about" />
           <ProfileButton action="Pricing" path="/price" />
           <ProfileButton action="Contact me" path="/contact" />
         </div>
