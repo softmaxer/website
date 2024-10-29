@@ -24,7 +24,7 @@ export default function MusicHome() {
           <div className="flex flex-col md:flex-row lg:flex-row gap-6 bg-gray-200 dark:bg-gray-700 rounded-lg justify-center items-center">
             <iframe
               style={{ borderRadius: "12px", border: "0px" }}
-              src="https://open.spotify.com/embed/track/3t4IkHfT4eXZggkupi4SUe?utm_source=generator"
+              src="https://open.spotify.com/embed/track/6s7Tv5Gqf1hURygPnKBBH8?utm_source=generator&theme=0"
               width="100%"
               height="352"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
