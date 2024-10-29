@@ -10,7 +10,7 @@ export default function Socials() {
   return (
     <div className="grid grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-4">
       <Link
-        href={""}
+        href={"https://www.instagram.com/srir4mvad/"}
         className="hover:scale-125 translate-y-3 transition-all hover:text-pink-500"
       >
         <IconInstagram />
@@ -22,7 +22,9 @@ export default function Socials() {
         <IconTwitter />
       </Link>
       <Link
-        href={""}
+        href={
+          "https://open.spotify.com/artist/1N5RKj0XnPIM7A8K9vczQT?si=taBGjx-nRtaXTEilX_3Cwg"
+        }
         className="hover:scale-125 translate-y-3 transition-all hover:text-pink-500"
       >
         <IconBxlSpotify />
