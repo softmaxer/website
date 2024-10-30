@@ -25,7 +25,7 @@ export default function ContactMe() {
       if (response.error) {
         setResponseMessage(response.error);
       } else {
-        setResponseMessage(response.message);
+        setResponseMessage("Message submitted");
       }
     } else {
       setResponseMessage("All fields are required.");
