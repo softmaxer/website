@@ -1,42 +1,4 @@
-interface SpotifyClientCredentials {
-  clientID: string;
-  clientSecret: string;
-}
-
-export const getSpotifyBearerToken = ({
-  clientID,
-  clientSecret,
-}: SpotifyClientCredentials): string => {
-  console.log(clientID);
-  console.log(clientSecret);
-
-  return "";
-};
-
-export const getAuthToken = async () => {
-  const details = {
-    grant_type: "client_credentials",
-    client_id: process.env.SPOTIFY_CLIENT_ID ?? "",
-    client_secret: process.env.SPOTIFY_CLIENT_SECRET ?? "",
-  };
-
-  const formBody = new URLSearchParams(details);
-
-  const response = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/x-www-form-urlencoded",
-    },
-    body: formBody,
-  }).then((resp) => {
-    if (resp.status != 200) {
-      throw new Error("Couldn't authenticate with spotify");
-    }
-    return resp;
-  });
-
-  return response.json();
-};
+import { contentType } from "@/app/api/detect/route";
 
 const API_ENDPOINT = "/api/contact";
 
@@ -45,6 +7,21 @@ export default async function handleSendEmail(data: {
   email: string;
   message: string;
 }): Promise<{ data?: unknown; message?: string; error?: string }> {
+  const detectMarketing = await fetch("/api/detect", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ message: data.message }),
+  });
+  const isMarketing: contentType = await detectMarketing.json();
+  if (isMarketing.marketing_content === true) {
+    return {
+      data,
+      message: isMarketing.errorMessage,
+      error: isMarketing.errorMessage,
+    };
+  }
   const response = await fetch(API_ENDPOINT, {
     method: "POST",
     headers: {
