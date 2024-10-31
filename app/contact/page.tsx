@@ -1,9 +1,11 @@
 "use client";
+import Loading from "@/components/buttons/loading";
 import handleSendEmail from "@/lib/actions";
 import React, { FormEvent } from "react";
 
 export default function ContactMe() {
   const [responseMessage, setResponseMessage] = React.useState<string>();
+  const [submitLoading, setSubmitLoading] = React.useState<boolean>(false);
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -11,6 +13,7 @@ export default function ContactMe() {
 
     // Clear response.
     setResponseMessage(undefined);
+    setSubmitLoading(true);
 
     const data = {
       username: eventData.get("name")?.toString(),
@@ -24,10 +27,13 @@ export default function ContactMe() {
       const response = await handleSendEmail({ username, email, message });
       if (response.error) {
         setResponseMessage(response.error);
+        setSubmitLoading(false);
       } else {
+        setSubmitLoading(false);
         setResponseMessage("Message submitted");
       }
     } else {
+      setSubmitLoading(false);
       setResponseMessage("All fields are required.");
     }
   }
@@ -66,11 +72,15 @@ export default function ContactMe() {
           rows={6}
           className="w-full rounded-md py-3 px-4 text-gray-800 bg-transparent text-sm border-b-2 border-pink-500 dark:text-gray-300"
         ></textarea>
-        <input
-          type="submit"
-          className="text-lg bg-transparent text-pink-500 hover:text-white hover:bg-pink-500 tracking-wide rounded-md  px-4 py-3 transition-all ease-in-out duration-300"
-          value={"Submit"}
-        ></input>
+        {submitLoading ? (
+          <Loading />
+        ) : (
+          <input
+            type="submit"
+            className="text-lg bg-transparent text-pink-500 hover:text-white hover:bg-pink-500 tracking-wide rounded-md  px-4 py-3 transition-all ease-in-out duration-300"
+            value={"Submit"}
+          ></input>
+        )}
       </form>
       {responseMessage && <p className="alert">{responseMessage}</p>}
     </div>
