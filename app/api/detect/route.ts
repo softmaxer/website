@@ -14,7 +14,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 const jsonExample = JSON.stringify({ marketing_content: true });
 
-export async function getGroqChatCompletion(message: string) {
+async function getGroqChatCompletion(message: string) {
   return groq.chat.completions.create({
     messages: [
       {
