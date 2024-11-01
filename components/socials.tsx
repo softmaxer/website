@@ -5,10 +5,11 @@ import IconApplemusic from "./icons/apple-music";
 import IconTwitter from "./icons/twitter";
 import IconYoutubemusic from "./icons/yt-music";
 import IconBxlDeezer from "./icons/deezer";
+import IconTidal from "./icons/tidal";
 
 export default function Socials() {
   return (
-    <div className="grid grid-cols-6 md:grid-cols-6 lg:grid-cols-6 gap-4">
+    <div className="grid grid-cols-7 md:grid-cols-7 lg:grid-cols-7 gap-4">
       <Link
         href={"https://www.instagram.com/srir4mvad/"}
         className="hover:scale-125 translate-y-3 transition-all hover:text-pink-500"
@@ -46,6 +47,12 @@ export default function Socials() {
         className="hover:scale-125 translate-y-3 transition-all hover:text-pink-500"
       >
         <IconBxlDeezer />
+      </Link>
+      <Link
+        href={"https://tidal.com/browse/artist/51418733?u"}
+        className="hover:scale-125 translate-y-3 transition-all hover:text-pink-500"
+      >
+        <IconTidal />
       </Link>
     </div>
   );
