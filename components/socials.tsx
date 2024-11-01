@@ -36,7 +36,7 @@ export default function Socials() {
         <IconYoutubemusic />
       </Link>
       <Link
-        href={""}
+        href={"https://music.apple.com/fr/artist/ram/1776501483?l=en-GB"}
         className="hover:scale-125 translate-y-3 transition-all hover:text-pink-500"
       >
         <IconApplemusic />
