@@ -12,7 +12,8 @@ export interface contentDetectionRequest {
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
-const jsonExample = JSON.stringify({ marketing_content: true });
+const positiveJsonExample = JSON.stringify({ marketing_content: true });
+const negativeJsonExample = JSON.stringify({ marketing_content: false });
 
 async function getGroqChatCompletion(message: string) {
   return groq.chat.completions.create({
@@ -26,7 +27,7 @@ async function getGroqChatCompletion(message: string) {
       {
         role: "user",
 
-        content: `I have a contact me page on my music production website, allowing people to contact me regarding producing their tracks, or talking about music. However, random people on the internet are misusing this feature to send me marketing emails that do not concern anything related to music or production. Can you send me a JSON response resembling the following structure if there is such content detected?: ${jsonExample}.\n Here is the message I received: ${message}. Please remember to respond with false if there is no such marketing content detected.`,
+        content: `I have a contact me page on my music production website, allowing people to contact me regarding producing their tracks, or talking about music. However, random people on the internet are misusing this feature to send me marketing emails that do not concern anything related to music or production. Can you send me a JSON response resembling the following structure if there is such content detected?: ${positiveJsonExample}.\n And if someone is actually contacting me for talking about their music, or want to talk to me about anything else, then can you send be a json like this: ${negativeJsonExample} \nHere is the message I received: ${message}.`,
       },
     ],
 
