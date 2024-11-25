@@ -36,9 +36,9 @@ export default function Home() {
         className={`${taglineIsVisible ? "opacity-70" : "opacity-0"} ease-in duration-1000 font-solanelLight flex flex-col gap-5 md:gap-10 lg:gap-12`}
       >
         <p className={`text-right text-2xl md:text-4xl lg:text-4xl`}>
-          Hello👋! I&apos;m Ram, a music producer based in Paris, France. I like
-          listening to blues, rock, punk and pretty much anything and everything
-          with a guitar in it!
+          Hello👋! I&apos;m Ram, a music producer and a mixing engineer based in
+          Paris, France. I like listening to blues, rock, punk and pretty much
+          anything and everything with a guitar in it!
           <br />
         </p>
         <br />
