@@ -43,7 +43,7 @@ export default function Socials() {
         <IconApplemusic />
       </Link>
       <Link
-        href={""}
+        href={"https://www.deezer.com/en/artist/289607931"}
         className="hover:scale-125 translate-y-3 transition-all hover:text-pink-500"
       >
         <IconBxlDeezer />
