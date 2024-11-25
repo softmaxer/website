@@ -52,7 +52,7 @@ export default function MusicHome() {
         Listen to my music{" "}
         <span className="text-2xl md:text-4xl lg:text-4xl hover:text-pink-500 transition-all ease-in-out duration-300 font-solanelLight">
           <Link
-            href={"https://distrokid.com/hyperfollow/ram46/rolling"}
+            href={"https://hyperfollow.com/softmaxer"}
             className="underline decoration-pink-500 hover:no-underline transition-all ease-in-out duration-300"
           >
             on all streaming platforms.
