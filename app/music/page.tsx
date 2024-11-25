@@ -1,5 +1,4 @@
 "use client";
-import ComingSoon from "@/components/coming-soon";
 import { useIsVisible } from "@/hooks/element-boundary";
 import Link from "next/link";
 import React from "react";
