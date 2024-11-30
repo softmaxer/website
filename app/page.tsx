@@ -20,14 +20,13 @@ export default function Home() {
         <p className="text-7xl md:text-9xl lg:text-9xl text-left font-solanelBold">
           Ram
         </p>
-        <p className="text-2xl md:text-4xl lg:text-4xl text-left opacity-40 font-solanelBold">
-          Music Producer
+        <p className="text-2xl md:text-2xl lg:text-2xl text-left opacity-40 font-solanelBold">
+          Musician | Producer
         </p>
         <Socials />
         <div className="flex flex-col justify-start rounded-md p-2 gap-5 font-solanelRegular">
           <ProfileButton action="My work" path="/music" />
           <ProfileButton action="More about me" path="/about" />
-          <ProfileButton action="Pricing" path="/price" />
           <ProfileButton action="Contact me" path="/contact" />
         </div>
       </div>
@@ -37,7 +36,7 @@ export default function Home() {
       >
         <p className={`text-right text-2xl md:text-4xl lg:text-4xl`}>
           Hello👋! I&apos;m Ram, a music producer and a mixing engineer based in
-          Paris, France. I like listening to blues, rock, punk and pretty much
+          Lyon, France. I like listening to blues, rock, punk and pretty much
           anything and everything with a guitar in it!
           <br />
         </p>
